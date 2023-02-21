@@ -4,7 +4,8 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 
-app = Dash()
+app = Dash(__name__)
+server =  app.server
 
 
 app.layout = html.Div(
