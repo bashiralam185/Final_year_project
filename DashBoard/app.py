@@ -9,7 +9,7 @@ server =  app.server
 
 
 app.layout = html.Div(
-    html.H1( children='Hello')
+    html.H1( children='Analyze, predict and forecasting Air Pollution in Bishkek')
 )
 
 
