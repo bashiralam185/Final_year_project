@@ -34,7 +34,7 @@ app.layout = html.Div([
     html.Div(id='container-button-timestamp'),
     html.Label("Air Pollutants from 2019-2022 in Bishkek"),
     
-])
+], className='Main')
 
 # this call back function is repsonsible to display the graphs from the selected categories
 @app.callback(
@@ -50,9 +50,9 @@ def displayClick(btn1, btn2, btn3):
     # This if statement contains the graphs for analyze purpose
     if "btn-nclicks-1" == ctx.triggered_id:
         graph_1 = px.line(bishkek_data, x="Date", y='median', color='Specie', title='Bishkek City')
-        graph_2 = px.pie(data, names='AQI Category', title='Quality of Air in Bishkek from 2019 to 2022', width=400, height=400)
+        graph_2 = px.pie(data, names='AQI Category', title='Quality of Air in Bishkek from 2019 to 2022')
         # graph_3 = px.bar(data, x="Year", y="AQI",color="AQI Category",  barmode='group', title="Bishkek air pollution per year", width=500, height=400)
-        graph_5 = px.line(data, x="Date (LT)", y="AQI",  title='AQI of Bishkek city from 2019 to 2022', width=600, height=400)
+        graph_5 = px.line(data, x="Date (LT)", y="AQI",  title='AQI of Bishkek city from 2019 to 2022')
         graph_4 = px.line(pollutants, x="Day", y="PM1(mcg/m³)", title='Concentration of pollutants in Bishkek Air')
 
 
@@ -72,13 +72,13 @@ def displayClick(btn1, btn2, btn3):
             html.Div([
                 html.Div(
                     dcc.Graph(id='pie_chat', 
-                              figure=graph_2) 
+                              figure=graph_2), className='pie_chart'
                 ), 
                 html.Div(
                     dcc.Graph(
                         id='bar_chart',
                         figure=graph_5
-                    ),
+                    ),className="bar_chart"
                 )
             ], className='SecondGraph'),
             html.Hr(),
