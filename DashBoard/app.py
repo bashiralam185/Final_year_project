@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
 
+# Checking
 # importing the dataset
 bishkek_data = pd.read_csv("assets/Bishkek_data.csv")
 data = pd.read_csv("assets/pm2_data.csv")
